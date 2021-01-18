@@ -1,5 +1,5 @@
 const express = require("express");
-const endPoints = require("./routes/endpoints");
+const endPoints = require("./routers/endpoints");
 const cors = require("cors");
 
 const app = express();
