@@ -2,9 +2,9 @@
   "name": "halffar",
   "version": "1.0.0",
   "description": "Miles to learn, Miles to forget",
-  "main": "index.js",
+  "main": "api.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon api"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/Alphasaurs/Halffar/issues"
   },
-  "homepage": "https://github.com/Alphasaurs/Halffar#readme"
+  "homepage": "https://github.com/Alphasaurs/Halffar#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
 }
