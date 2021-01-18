@@ -2,9 +2,9 @@
   "name": "halffar",
   "version": "1.0.0",
   "description": "Miles to learn, Miles to forget",
-  "main": "api.js",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon api"
+    "start": "nodemon index"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,10 @@
   },
   "homepage": "https://github.com/Alphasaurs/Halffar#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "pg": "^8.5.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
