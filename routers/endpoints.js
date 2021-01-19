@@ -32,8 +32,10 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    console.log("Showing your task No : " + [id]);
-    const searchId = await pool.query("SELECT * FROM tasks WHERE id = $1", [id]);
+    console.log("Showing your task No : " + [id] + " details");
+    const searchId = await pool.query("SELECT * FROM tasks WHERE id = $1", [
+      id,
+    ]);
     res.json(searchId.rows[0]);
   } catch (err) {
     console.error(err.message);
@@ -59,7 +61,7 @@ router.put("/deadline/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const { deadline } = req.body;
-    console.log("Updating deadline of task : " + [id]);
+    console.log("Updating deadline of task No : " + [id]);
     const updatetitle = await pool.query(
       "UPDATE tasks SET deadline = $1 WHERE id= $2",
       [deadline, id]
@@ -126,16 +128,46 @@ router.get("/priority/deadline", async (req, res) => {
 });
 
 // Searching
-router.get("/search/title", async (req, res) => {
+router.get("/search/:title", async (req, res) => {
   try {
     const { title } = req.params;
-    console.log("Showing your task No : " + [id]);
-    const searchTitle = await pool.query("SELECT * FROM tasks WHERE title = $1, [title]);
+    console.log("Showing your searched task ");
+    const searchTitle = await pool.query(
+      "SELECT * FROM tasks WHERE status = $1 ",
+      [title]
+    );
     res.json(searchTitle.rows[0]);
   } catch (err) {
     console.error(err.message);
   }
 });
 
-module.exports = router;
+router.get("/search/:status", async (req, res) => {
+  try {
+    const { status } = req.params;
+    console.log("Showing your searched task ");
+    const searchStatus = await pool.query(
+      "SELECT * FROM tasks WHERE status = $1 ",
+      [status]
+    );
+    res.json(searchStatus.rows[0]);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
 
+router.get("/search/:deadline", async (req, res) => {
+  try {
+    const { deadline } = req.params;
+    console.log("Showing your searched task ");
+    const searchDeadline = await pool.query(
+      "SELECT * FROM tasks WHERE deadline = $1 ",
+      [deadline]
+    );
+    res.json(searchDeadline.rows[0]);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
+module.exports = router;
