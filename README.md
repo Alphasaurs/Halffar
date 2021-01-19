@@ -130,7 +130,6 @@ $ );
             <td colspan =2>/halffar/search/:deadline</td>
             <td colspan =2>Showing your searched task </td>
         </tr>
-        
     </tbody>
     </table>
 [back to top](#table-of-contents)
