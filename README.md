@@ -111,7 +111,7 @@ $ );
             <td>GET</td>
             <td colspan =2>/halffar/priority/status</td>
             <td colspan =2>Tasks priority on the basis of status.</td>
-        </tr><tr><
+        </tr><tr>
             <td>GET</td>
             <td colspan =2>/halffar/priority/deadline</td>
             <td colspan =2>Tasks priority on the basis of deadlines.</td>
@@ -125,7 +125,7 @@ $ );
             <td colspan =2>/halffar/search/:status</td>
             <td colspan =2>Showing your searched task </td>
         </tr>
-         </tr><tr>
+         <tr>
             <td>GET</td>
             <td colspan =2>/halffar/search/:deadline</td>
             <td colspan =2>Showing your searched task </td>
